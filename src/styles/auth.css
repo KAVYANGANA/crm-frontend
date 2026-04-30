@@ -1,0 +1,235 @@
+/* ===== MAIN CONTAINER ===== */
+.auth-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* prevent full page scroll */
+  padding: 20px;
+  background: #e6eef5;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== LEFT SIDE ===== */
+.auth-left {
+  flex: 1;
+  background: url("../assets/hero.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.auth-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 77, 184, 0.65);
+}
+
+/* TEXT ABOVE OVERLAY */
+.auth-left * {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* BRAND */
+.brand-block {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 8px; /* 👈 controls spacing */
+  text-align: right;
+}
+
+.brand-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* BOTTOM TEXT */
+.left-text {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  font-size: 28px;
+  font-weight: bold;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+/* ===== RIGHT SIDE ===== */
+.auth-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cfdbe6;
+  border-radius: 0 20px 20px 0;
+}
+
+/* ===== LOGIN CARD (NO SCROLL) ===== */
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 360px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* ===== SIGNUP CARD (STRUCTURED SCROLL) ===== */
+.signup-card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 420px;
+  height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HEADER (fixed) */
+.signup-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.signup-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.signup-header p {
+  font-size: 13px;
+  color: gray;
+}
+
+/* SCROLLABLE FORM */
+.signup-form {
+  flex: 1;
+  overflow-y: auto; /* ✅ ONLY FORM SCROLLS */
+  padding-right: 5px;
+}
+
+/* FOOTER (fixed button) */
+.signup-footer {
+  margin-top: 10px;
+}
+
+/* ===== COMMON FORM STYLES ===== */
+.login-card h2,
+.signup-card h2 {
+  margin-bottom: 5px;
+}
+
+.login-card p {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* LABELS */
+.login-card label,
+.signup-form label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+/* INPUTS */
+.login-card input,
+.signup-form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 14px;
+  outline: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+/* PASSWORD FIELD */
+.password-box {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.signin-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #004aad, #5fb0e6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* LINKS */
+.forgot {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #004aad;
+  cursor: pointer;
+}
+
+.or {
+  margin: 15px 0;
+  font-size: 12px;
+  color: gray;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* SIGNUP TEXT */
+.signup-text {
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.signup-text a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
