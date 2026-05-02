@@ -1,5 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import MainLayout from "./layout/MainLayout";
+
+import Dashboard from "./pages/Dashboard";
+import Leads from "./pages/Leads";
+import AddLead from "./pages/AddLead";
+
 import LoginAgent from "./pages/LoginAgent";
 import LoginAdmin from "./pages/LoginAdmin";
 import SignupAdmin from "./pages/SignupAdmin";
@@ -10,23 +16,20 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* Default → Agent Login */}
+        {/* Authentication routes */}
         <Route path="/" element={<LoginAgent />} />
-
-        {/* Agent Login (optional route) */}
         <Route path="/agent-login" element={<LoginAgent />} />
-
-        {/* Admin Login */}
         <Route path="/admin-login" element={<LoginAdmin />} />
-
-        {/* Admin Signup */}
         <Route path="/admin-signup" element={<SignupAdmin />} />
-
         <Route path="/forgot-password" element={<ForgotPassword />} />
-
         <Route path="/otp" element={<OtpPage />} />
 
+        {/* Application routes with layout */}
+        <Route path="/app" element={<MainLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="leads" element={<Leads />} />
+          <Route path="add-lead" element={<AddLead />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
