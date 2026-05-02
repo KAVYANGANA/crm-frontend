@@ -5,10 +5,21 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Decide title based on route
-  let title = "Dashboard";
+  // Default
+  let title = "Agent List";
   let showBack = false;
 
+  // AGENTS
+  if (location.pathname === "/agents" || location.pathname === "/") {
+    title = "Agent List";
+  }
+
+  if (location.pathname === "/add-agent") {
+    title = "Add Agent";
+    showBack = true;
+  }
+
+  // (optional) keep leads if used later
   if (location.pathname === "/leads") {
     title = "All Leads";
   }

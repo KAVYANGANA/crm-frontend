@@ -1,19 +1,23 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 
-import Dashboard from "./pages/Dashboard";
-import Leads from "./pages/Leads";
-
-import AddLead from "./pages/AddLead";
+// Pages
+import AgentList from "./pages/agents/AgentList";
+import AddAgent from "./pages/agents/AddAgent";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="leads" element={<Leads />} />
-          <Route path="add-lead" element={<AddLead />} />
+
+          {/* DEFAULT PAGE */}
+          <Route index element={<AgentList />} />
+
+          {/* ROUTES */}
+          <Route path="agents" element={<AgentList />} />
+          <Route path="add-agent" element={<AddAgent />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
