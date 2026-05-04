@@ -12,7 +12,10 @@ function Sidebar() {
   const location = useLocation();
 
   const menu = [
-    { name: "Dashboard", path: "/", icon: Home },
+    { name: "Dashboard", path: "#", icon: Home },
+
+    { name: "Agents", path: "/", icon: Users },
+
     { name: "Leads", path: "/leads", icon: Users },
     { name: "Leads Status", path: "#", icon: BarChart3 },
     { name: "Deals", path: "#", icon: Briefcase },
